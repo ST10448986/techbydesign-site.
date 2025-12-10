@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>techbydesign.studio | Java • Swing • Modern UI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="light">
+    <!-- LOADING SCREEN -->
+    <div id="loader" class="loader">
+        <div class="loader-bubbles"></div>
+        <div class="loader-text">Launching Studio...</div>
+    </div>
+
+    <!-- CANVAS BACKGROUND -->
+    <canvas id="hero-bubbles" class="hero-bubbles"></canvas>
+    <canvas id="cursor-trail" class="cursor-trail"></canvas>
+
+    <!-- NAVBAR -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">techbydesign.studio</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#process">Process</a>
+                <a href="#contact">Contact</a>
+                <button id="live-coding-btn" class="btn btn-secondary" title="Live Coding Demo">💻</button>
+                <button id="theme-toggle" class="theme-toggle">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home" class="hero section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="typewriter-text"></span>
+                </h1>
+                <p class="hero-subtitle reveal">
+                    Java Swing apps • Modern UIs • Clean code • Studio-grade delivery
+                </p>
+                <div class="hero-cta reveal" data-delay="1">
+                    <a href="#contact" class="btn btn-primary">
+                        Start Project <span class="arrow">→</span>
+                    </a>
+                    <a href="#process" class="btn btn-secondary">My Process</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="process" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title text-center reveal">Studio Process</h2>
+            <p class="section-subtitle text-center reveal">Predictable delivery • Transparent pricing • Pixel-perfect results</p>
+            <ul class="process-steps reveal" data-delay="1">
+                <li>
+                    <h3>Discover</h3>
+                    <p>Requirements • Scope • Tech audit • Fixed quote</p>
+                </li>
+                <li>
+                    <h3>Design</h3>
+                    <p>Wireframes • UI prototypes • Client approval</p>
+                </li>
+                <li>
+                    <h3>Develop</h3>
+                    <p>Clean code • Unit tests • Daily syncs</p>
+                </li>
+                <li>
+                    <h3>Deliver</h3>
+                    <p>Production deploy • Documentation • Support</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="about-layout">
+                <div class="reveal">
+                    <h2 class="section-title">Java Swing Specialist</h2>
+                    <p class="section-subtitle">Modern apps with battle-tested tech</p>
+                    <div class="stats-counter">
+                        <div class="stat">
+                            <span class="counter" data-target="50">0</span>
+                            <div class="stat-label">Projects</div>
+                        </div>
+                        <div class="stat">
+                            <span class="counter" data-target="100">0</span>
+                            <div class="stat-label">Test Coverage</div>
+                        </div>
+                    </div>
+                    <div class="about-unique">
+                        <strong>Unique:</strong> I specialize in Java Swing + modern UI/UX. No framework bloat, just clean, native apps.
+                    </div>
+                </div>
+                <div class="reveal" data-delay="1">
+                    <canvas id="skill-radar" class="radar-chart" width="300" height="300"></canvas>
+                    <div class="quiz-container">
+                        <h4>Quick Quiz: Your Project Type?</h4>
+                        <div class="quiz-options">
+                            <button class="quiz-btn" data-mode="sprint">Fast Sprint</button>
+                            <button class="quiz-btn" data-mode="precision">Precision Build</button>
+                            <button class="quiz-btn" data-mode="creative">Creative Flow</button>
+                        </div>
+                        <div id="quiz-result" class="quiz-result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT (FORMSUBMIT, BUDGET IN RANDS) -->
+    <section id="contact" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title text-center reveal">Start Your Project</h2>
+            <p class="section-subtitle text-center reveal">Fixed-price quotes • 2-week delivery • Money-back guarantee</p>
+            <div class="contact-wrapper reveal" data-delay="1">
+                <form class="contact-form" action="https://formsubmit.co/alvilaiba64@gmail.com" method="POST">
+                    <!-- FormSubmit config -->
+                    <input type="hidden" name="_subject" value="New Project - techbydesign.studio">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <!-- you can set a custom thank-you page here if you want -->
+                    <!-- <input type="hidden" name="_next" value="https://yourdomain.com/thanks.html"> -->
+
+                    <!-- Honeypot -->
+                    <div style="position:absolute; left:-9999px;">
+                        <input type="text" name="_h" tabindex="-1" autocomplete="off">
+                    </div>
+
+                    <div class="field">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required maxlength="100" placeholder="John Doe">
+                    </div>
+
+                    <div class="field">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required maxlength="100" placeholder="john@company.com">
+                    </div>
+
+                    <div class="field">
+                        <label for="project">Project Type *</label>
+                        <select id="project" name="project" required>
+                            <option value="">Choose one...</option>
+                            <option>Java Swing Desktop App</option>
+                            <option>GUI Modernization</option>
+                            <option>Inventory Management System</option>
+                            <option>Chat / Messaging App</option>
+                            <option>Custom Business Tool</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="budget">Budget (R)</label>
+                        <select id="budget" name="budget">
+                            <option value="">Optional</option>
+                            <option value="Under R5 000">Under R5 000</option>
+                            <option value="R5 000 - R15 000">R5 000 - R15 000</option>
+                            <option value="R15 000 - R40 000">R15 000 - R40 000</option>
+                            <option value="R40 000+">R40 000+</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="message">Project Details *</label>
+                        <textarea id="message" name="message" rows="6" required
+                                  placeholder="Timeline? Key features? Current tech stack? Challenges?"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary full-width">
+                        Send Project Brief →
+                    </button>
+                </form>
+
+                <div class="contact-info">
+                    <div class="info-card">
+                        <h4>Specializing In:</h4>
+                        <ul style="margin:1rem 0; padding-left:1.2rem;">
+                            <li>Inventory systems</li>
+                            <li>Swing GUI upgrades</li>
+                            <li>Business desktop tools</li>
+                            <li>Custom chat apps</li>
+                        </ul>
+                    </div>
+                    <div class="info-card">
+                        <h4>Response</h4>
+                        <p><strong>&lt; 2 hours</strong> on weekdays</p>
+                        <p>Quote + timeline + UI concept</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <span>&copy; 2025 techbydesign.studio. Java Swing specialist.</span>
+                <span>Made with ❤️ and clean code</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LIVE CODING MODAL -->
+    <div id="live-coding-modal" class="live-modal">
+        <div class="live-modal-content">
+            <div class="terminal">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <div class="btn-close"></div>
+                        <div class="btn-min"></div>
+                        <div class="btn-max"></div>
+                    </div>
+                    <h3 class="terminal-title">studio-terminal:~ studio$</h3>
+                </div>
+                <div id="live-terminal-body" class="terminal-body"></div>
+                <div class="terminal-prompt">
+                    studio@macbook live-coding % <span class="prompt-cursor">_</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
